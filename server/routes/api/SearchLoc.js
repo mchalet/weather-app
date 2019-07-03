@@ -4,7 +4,6 @@ module.exports = app => {
   let city;
 
   app.post("/search-location", (req, res) => {
-    console.log('POST')
     city = req.body.city;
   
     if (!city) {

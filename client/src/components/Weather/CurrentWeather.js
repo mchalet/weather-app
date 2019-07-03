@@ -2,21 +2,22 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 
-class CurrentWeather extends Component {
+import { kelvinToFahrenheit } from "../../helpers/helpers";
 
+class CurrentWeather extends Component {
   render() {
     const WeatherCardError = <div>Error</div>;
 
     const LoadingDisplay = <div>Loading</div>;
 
     const WeatherConditions =
-      this.props.cityNotFound == 404 ? (
+      this.props.cityNotFound === 404 ? (
         <div>{WeatherCardError}</div>
       ) : (
         <>
-          <div>{this.props.high}</div>
-          <div>{this.props.low}</div>
-          <div>{this.props.desc}</div>
+          <div>High: {kelvinToFahrenheit(this.props.high)}</div>
+          <div>Low: {kelvinToFahrenheit(this.props.low)}</div>
+          <div>Description: {this.props.desc}</div>
         </>
       );
 

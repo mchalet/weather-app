@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
-import CurrentWeather from "./components/Weather/CurrentWeather";
 import Layout from "./components/Layout/Layout";
 import Container from "@material-ui/core/Container";
 import WeatherContainer from "./components/Weather/WeatherContainer";
@@ -12,14 +10,14 @@ class App extends Component {
     const App = () => (
       <div>
         <Switch>
-          <Container maxWidth="lg">
+          <Container maxidth="lg">
             <Layout>
               <Route
                 path="/"
                 render={() => {
                   return (
                     <WeatherContainer
-                      title="Just City"
+                      title="Current Weather"
                       formfields={["city"]}
                       searchtype="city"
                       formaction="/search-location"
@@ -33,9 +31,9 @@ class App extends Component {
                 render={() => {
                   return (
                     <WeatherContainer
-                      title="City Forcast"
+                      title="Weather Forcast"
                       formfields={["city", "count"]}
-                      searchtype="city"
+                      searchtype="multiday"
                       formaction="/search-location-days"
                       fetch="/search-location-days-weather"
                     />
