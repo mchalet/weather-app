@@ -1,9 +1,10 @@
 ## Weather App Challenge
 
 TODOS:
-1. Currently, API calls for the forecast are hard coded to 10 days. Attempts to dynamically insert a count from the form break the API call. Need to investigate cause.
+1. Currently, API calls for the forecast are hard coded to 10 days. Attempts to dynamically insert a count from the form breaks the API call. Need to investigate cause.
 2. Find cause of 'computedMatch' error in dev tool console.
-3. Fix up the gritty UI and styling.
+3. Add unit testing, form validation, and test edge cases.
+4. Fix up gritty UI and styling.
 
 
 ### Getting Started
