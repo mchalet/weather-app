@@ -6,4 +6,4 @@
 2. Navigate to `/client` and `/server`.
 3. Run `npm install` in each directory.
 4. Run `npm start` in each directory.
-5. Navigate to (http://localhost:3000/)[http://localhost:3000/].
+5. Navigate to [http://localhost:3000/](http://localhost:3000/).
