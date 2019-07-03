@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    marginBottom: '20px',
   },
   appbar: {
       alignItems: 'center',

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
-import CurrentWeather from './components/Weather/CurrentWeather';
-import Layout from './components/Layout/Layout';
-import Container from '@material-ui/core/Container';
+import CurrentWeather from "./components/Weather/CurrentWeather";
+import Layout from "./components/Layout/Layout";
+import Container from "@material-ui/core/Container";
 import WeatherContainer from "./components/Weather/WeatherContainer";
 
 class App extends Component {
@@ -13,10 +13,27 @@ class App extends Component {
       <div>
         <Switch>
           <Container maxWidth="lg">
-          <Layout>
-            <Route exact path="/" component={WeatherContainer} />
-            <Route path="/current-weather" component={CurrentWeather} />
-          </Layout>
+            <Layout>
+              <Route
+                path="/"
+                render={() => {
+                  return (
+                    <WeatherContainer formfields={["city"]} searchtype="city" />
+                  );
+                }}
+              />
+              <Route
+                path="/"
+                render={() => {
+                  return (
+                    <WeatherContainer
+                      formfields={["city", "count"]}
+                      searchtype="city"
+                    />
+                  );
+                }}
+              />
+            </Layout>
           </Container>
         </Switch>
       </div>

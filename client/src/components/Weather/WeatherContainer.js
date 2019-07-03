@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Route, Switch } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 
+import CurrentWeather from "./CurrentWeather";
 import WeatherForm from "./WeatherForm";
 
 const useStyles = makeStyles(theme => ({
@@ -30,12 +32,8 @@ const WeatherContainer = props => {
       >
         <Grid item xs={7}>
           <Paper className={classes.paper}>
-            <WeatherForm />
-          </Paper>
-        </Grid>
-        <Grid item xs={7}>
-          <Paper className={classes.paper}>
-            <div>Card</div>
+            <WeatherForm searchtype={props.searchtype} />
+            <Route path="/current-weather" component={CurrentWeather} />
           </Paper>
         </Grid>
       </Grid>

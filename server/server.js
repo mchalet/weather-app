@@ -8,6 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 require('./routes/api/SearchLoc')(app);
+require('./routes/api/SearchLocByDay')(app);
  
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, "../client/build")));
