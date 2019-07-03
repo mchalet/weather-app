@@ -18,7 +18,13 @@ class App extends Component {
                 path="/"
                 render={() => {
                   return (
-                    <WeatherContainer formfields={["city"]} searchtype="city" />
+                    <WeatherContainer
+                      title="Just City"
+                      formfields={["city"]}
+                      searchtype="city"
+                      formaction="/search-location"
+                      fetch="/search-location-weather"
+                    />
                   );
                 }}
               />
@@ -27,8 +33,11 @@ class App extends Component {
                 render={() => {
                   return (
                     <WeatherContainer
+                      title="City Forcast"
                       formfields={["city", "count"]}
                       searchtype="city"
+                      formaction="/search-location-days"
+                      fetch="/search-location-days-weather"
                     />
                   );
                 }}

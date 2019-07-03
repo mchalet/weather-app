@@ -32,8 +32,18 @@ const WeatherContainer = props => {
       >
         <Grid item xs={7}>
           <Paper className={classes.paper}>
-            <WeatherForm searchtype={props.searchtype} />
-            <Route path="/current-weather" component={CurrentWeather} />
+            <WeatherForm
+              title={props.title}
+              formfields={props.formfields}
+              searchtype={props.searchtype}
+              formaction={props.formaction}
+            />
+            <Route
+              path="/current-weather"
+              render={() => {
+                return <CurrentWeather fetch={props.fetch} />;
+              }}
+            />
           </Paper>
         </Grid>
       </Grid>

@@ -57,8 +57,11 @@ class WeatherForm extends Component {
       );
     return (
       <div>
-        <form method="POST" action="/search-location">
-          <input type="text" placeholder={this.props.searchtype} name={this.props.searchtype} />
+          <h1>{this.props.title}</h1>
+        <form method="POST" action={this.props.formaction}>
+            {this.props.formfields.map(field => {
+                return <input type="text" placeholder={field} name={field} key={field} />;
+            })}
           <button>Submit</button>
         </form>
       </div>

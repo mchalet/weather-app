@@ -12,7 +12,7 @@ class CurrentWeather extends Component {
   };
 
   componentDidMount() {
-    fetch("/search-location-weather")
+    fetch(this.props.fetch)
       .then(res => res.json())
       .then(data => {
         console.log(data);
