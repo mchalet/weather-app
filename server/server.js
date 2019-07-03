@@ -1,26 +1,20 @@
 const express = require("express");
 const path = require("path");
+const fetch = require("node-fetch");
 
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+require('./routes/api/SearchLoc')(app);
  
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, "client/build")));
-
-require('./routes')(app)
-
-// An api endpoint that returns a short list of items
-app.get("/api/getList", (req, res) => {
-  var list = ["item1", "item2", "item3"];
-  res.json(list);
-  console.log("Sent list of items");
-});
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 // Handles any requests that don't match the ones above
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  res.sendFile(path.join(__dirname + "../client/build/index.html"));
 });
 
 const port = process.env.PORT || 5000;

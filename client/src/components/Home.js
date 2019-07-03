@@ -6,9 +6,10 @@ class Home extends Component {
     return (
       <div className="App">
         <h1>Weather</h1>
-        <Link to={"./list"}>
-          <button variant="raised">My List</button>
-        </Link>
+        <form method="POST" action="/search-location">
+          <input type='text' placeholder="zip" name='zip' />
+          <button>Submit</button>
+        </form>
       </div>
     );
   }
