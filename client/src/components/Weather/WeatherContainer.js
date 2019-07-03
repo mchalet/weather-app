@@ -37,12 +37,7 @@ const WeatherContainer = props => {
               formfields={props.formfields}
               searchtype={props.searchtype}
               formaction={props.formaction}
-            />
-            <Route
-              path="/current-weather"
-              render={() => {
-                return <CurrentWeather fetch={props.fetch} />;
-              }}
+              fetch={props.fetch}
             />
           </Paper>
         </Grid>
